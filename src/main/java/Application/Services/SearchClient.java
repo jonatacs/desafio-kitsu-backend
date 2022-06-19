@@ -53,4 +53,17 @@ public class SearchClient {
 
         return data;
     }
+
+    public BuildResponseList getFilter(String type, String filtering, String slug) {
+
+        Mono<BuildResponseList> monoData = this.webClient
+                .method(HttpMethod.GET)
+                .uri("/{type}?filter[{filtering}]={slug}", type, filtering, slug)
+                .retrieve()
+                .bodyToMono(BuildResponseList.class);
+
+        BuildResponseList data = monoData.block();
+
+        return data;
+    }
 }

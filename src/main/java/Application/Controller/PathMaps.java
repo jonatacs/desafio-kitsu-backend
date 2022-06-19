@@ -39,4 +39,11 @@ public class PathMaps {
 
         return ResponseEntity.ok(filter);
     }
+
+    @GetMapping(value = "/{type}/{filtering}/{slug}")
+    public ResponseEntity<BuildResponseList> filterSettings(@PathVariable String type, @PathVariable String filtering, @PathVariable String slug) {
+        BuildResponseList filter = this.searchClient.getFilter(type, filtering, slug);
+
+        return ResponseEntity.ok(filter);
+    }
 }
