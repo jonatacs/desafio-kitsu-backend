@@ -66,4 +66,43 @@ public class SearchClient {
 
         return data;
     }
+
+    public BuildResponseList getEpisodeByAnimeId(Integer id) {
+
+        Mono<BuildResponseList> monoData = this.webClient
+                .method(HttpMethod.GET)
+                .uri("/anime/{id}/episodes", id)
+                .retrieve()
+                .bodyToMono(BuildResponseList.class);
+
+        BuildResponseList data = monoData.block();
+
+        return data;
+    }
+
+    public String getEpisodeByAnimeIdTest(Integer id) {
+
+        Mono<BuildResponseList> monoData = this.webClient
+                .method(HttpMethod.GET)
+                .uri("/anime/{id}/episodes", id)
+                .retrieve()
+                .bodyToMono(BuildResponseList.class);
+
+        BuildResponseList data = monoData.block();
+
+        return data.toString();
+    }
+
+    public BuildResponseList getChapterByMangaId(Integer id) {
+
+        Mono<BuildResponseList> monoData = this.webClient
+                .method(HttpMethod.GET)
+                .uri("/manga/{id}/chapters", id)
+                .retrieve()
+                .bodyToMono(BuildResponseList.class);
+
+        BuildResponseList data = monoData.block();
+
+        return data;
+    }
 }

@@ -46,4 +46,18 @@ public class PathMaps {
 
         return ResponseEntity.ok(filter);
     }
+
+    @GetMapping(value = "/anime/{id}/episodes")
+    public ResponseEntity<BuildResponseList> filterEpisodeByAnimeId(@PathVariable Integer id) {
+        BuildResponseList filter = this.searchClient.getEpisodeByAnimeId(id);
+
+        return ResponseEntity.ok(filter);
+    }
+
+    @GetMapping(value = "/manga/{id}/chapters")
+    public ResponseEntity<BuildResponseList> filterChapterByMangaId(@PathVariable Integer id) {
+        BuildResponseList filter = this.searchClient.getChapterByMangaId(id);
+
+        return ResponseEntity.ok(filter);
+    }
 }
