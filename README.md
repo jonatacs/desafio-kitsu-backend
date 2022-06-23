@@ -76,5 +76,5 @@
 		```
 
 #### Agradecimentos
-Agradeço à Firedev pela oportunidade em realizar este projeto, e me aventurar em uma nova linguagem.
-Apesar de ter finalizado somente a parte principal do desafio, ainda pretendo realizar o plus para aprimorar meus conhecimentos utilizando esta linguagem! 😎.
+Agradeço à Firedev pela oportunidade em realizar este projeto, e aprimorar meus conhecimentos na linguagem.
+Apesar de ter finalizado somente a parte principal do desafio, ainda pretendo realizar o plus para concluir o desafio total nesta linguagem! 😎.
