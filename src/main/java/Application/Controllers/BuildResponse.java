@@ -1,4 +1,4 @@
-package Application.Controller;
+package Application.Controllers;
 
 import Application.Models.Types;
 

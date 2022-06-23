@@ -1,9 +1,9 @@
 package Application.Models;
 
 public class Types {
-    private Attributes attributes;
     private String id;
     private String type;
+    private Attributes attributes;
 
     public String getId() {
         return id;
