@@ -75,6 +75,20 @@
 		*/
 		```
 
+	- [http://localhost:8080/searches](http://localhost:8080/searches)
+		```
+		/**
+		* Caminho utilizado para retornar as buscas realizadas
+		*/
+		```
+
+#### Buscas
+- A cada busca realizada, será automaticamente atualizado o banco de dados com a busca efetuada.
+- Para consultar as buscas mais populares, acesse o banco de dados e execute o código abaixo:
+		SELECT s.id, s.type, s.action, s.slug, (SELECT COUNT(se.id) FROM searches AS se WHERE (CASE WHEN se.type IS NOT NULL THEN s.type = se.type ELSE s.type IS NULL END) AND (CASE WHEN se.action IS NOT NULL THEN s.action = se.action ELSE s.action IS NULL END) AND (CASE WHEN se.slug IS NOT NULL THEN s.slug = se.slug ELSE s.slug IS NULL END)) AS counter, (SELECT COUNT(sc.id) FROM searches AS sc) AS max FROM searches AS s GROUP BY s.type, s.action, s.slug ORDER BY counter DESC
+
+- OBS.: Por falta de conhecimento sobre o funcionamento correto do conjunto entre a linguagem, banco de dados e spring boot, não foi possível realizar a busca dentro do projeto, porém ainda estou em busca de como incluir esta busca!
+
 #### Agradecimentos
 Agradeço à Firedev pela oportunidade em realizar este projeto, e aprimorar meus conhecimentos na linguagem.
 Apesar de ter finalizado somente a parte principal do desafio, ainda pretendo realizar o plus para concluir o desafio total nesta linguagem! 😎.

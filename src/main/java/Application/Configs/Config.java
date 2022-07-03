@@ -6,6 +6,6 @@ public class Config {
 
 	// Define a página padrão exibida em tela ao entrar na API sem nenhum tipo de filtro
 	public static final String defaultBody = "<div style=\"display: flex; justify-content: center; align-items: center;\">" +
-												"Leia o arquivo Readme.md para informações sobre os caminhos utilizados para o retorno de dados" +
+												"Leia o arquivo Readme.md para informações sobre os caminhos utilizados para o retorno de dados." +
 											"</div>";
 }
