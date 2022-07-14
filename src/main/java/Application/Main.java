@@ -19,8 +19,7 @@ public class Main {
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .build();
     }
-    
-    
+
     public static void main(String[] args) {
         SpringApplication.run(Main.class, args);
     }
