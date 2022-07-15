@@ -63,7 +63,7 @@ public class PathMaps {
     @ApiOperation(value = "Caminho utilizado para retornar um anime ou manga específico")
     @ApiImplicitParams({
         @ApiImplicitParam(name = "type", value = "Tipo que será buscado. Pode ser utilizado os tipos \"anime\" ou \"manga\".", required = true, dataType = "string"),
-        @ApiImplicitParam(name = "id", value = "ID do anime/manga que será buscado na base de dados da Kitsu API.", required = true, dataType = "integer")
+        @ApiImplicitParam(name = "id", value = "ID do anime/manga que será buscado na base de dados da Kitsu API.", required = true, dataType = "int")
     })
     @GetMapping(value = "/{type}/{id}")
     public ResponseEntity<BuildResponse> filterById(@PathVariable String type, @PathVariable Integer id) {
@@ -137,7 +137,7 @@ public class PathMaps {
     }
     
     @ApiOperation(value = "Caminho utilizado para retornar os episódios de um anime")
-    @ApiImplicitParam(name = "id", value = "ID do episódio que será buscado na base de dados da Kitsu API.", required = true, dataType = "integer")
+    @ApiImplicitParam(name = "id", value = "ID do episódio que será buscado na base de dados da Kitsu API.", required = true, dataType = "int")
     @GetMapping(value = "/anime/{id}/episodes")
     public ResponseEntity<BuildResponseList> filterEpisodeByAnimeId(@PathVariable Integer id) {
         BuildResponseList filter = this.searchClient.getEpisodeByAnimeId(id);
@@ -160,7 +160,7 @@ public class PathMaps {
     }
     
     @ApiOperation(value = "Caminho utilizado para retornar os capítulos de um mangá")
-    @ApiImplicitParam(name = "id", value = "ID do capítulo que será buscado na base de dados da Kitsu API.", required = true, dataType = "integer")
+    @ApiImplicitParam(name = "id", value = "ID do capítulo que será buscado na base de dados da Kitsu API.", required = true, dataType = "int")
     @GetMapping(value = "/manga/{id}/chapters")
     public ResponseEntity<BuildResponseList> filterChapterByMangaId(@PathVariable Integer id) {
         BuildResponseList filter = this.searchClient.getChapterByMangaId(id);
